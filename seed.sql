@@ -11,3 +11,7 @@ CREATE TABLE posts (
     profile_id INTEGER REFERENCES profiles(id),
     date TIMESTAMP
 )
+
+rgb(0, 105, 234, 1)
+npm install @radix-ui/react-separator
+npm install @radix-ui/colors
