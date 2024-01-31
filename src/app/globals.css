@@ -3,3 +3,9 @@
   flex-direction: column;
   max-width: 400px;
 }
+
+#add-post-form {
+  display: flex;
+  flex-direction: column;
+  max-width: 400px;
+}
