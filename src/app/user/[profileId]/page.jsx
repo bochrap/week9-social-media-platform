@@ -1,13 +1,17 @@
 import { sql } from "@vercel/postgres";
 import { auth } from "@clerk/nextjs";
+import { notFound } from "next/navigation";
 
 export default async function ProfilePage({ params }) {
   const { userId } = auth();
   const userData = await sql`SELECT * FROM profiles WHERE id = ${params.profileId}`;
 
   //   const userData = await getUserData.json();
+  console.log(userData);
 
-  console.log(userData.rows[0].username);
+  if (!userData.rows[0]) {
+    notFound();
+  }
 
   return (
     <div>
