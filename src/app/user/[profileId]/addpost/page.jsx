@@ -9,8 +9,8 @@ export default function AddPost({ params }) {
     const content = formData.get("content");
 
     await sql`INSERT INTO posts (content, profile_id, date) VALUES (${content}, ${params.profileId}, CURRENT_TIMESTAMP)`;
-    revalidatePath(`/user/${params.profileId}`);
-    redirect(`/user/${params.profileId}`);
+    revalidatePath(`/user/${params.profileId}/posts`);
+    redirect(`/user/${params.profileId}/posts`);
   }
 
   return (

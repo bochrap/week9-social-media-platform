@@ -26,3 +26,4 @@ FROM profiles
 INNER JOIN posts ON profiles.id = posts.profile_id
 
 SELECT posts.id, posts.content, posts.profile_id, posts.date, profiles.username  FROM posts INNER JOIN profiles ON profiles.id = posts.profile_id
+
