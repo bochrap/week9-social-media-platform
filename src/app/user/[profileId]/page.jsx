@@ -7,7 +7,7 @@ export default async function ProfilePage({ params, children }) {
   const userData = await sql`SELECT * FROM profiles WHERE id = ${params.profileId}`;
 
   //   const userData = await getUserData.json();
-  console.log(userData);
+  // console.log(userData);
 
   if (!userData.rows[0]) {
     notFound();

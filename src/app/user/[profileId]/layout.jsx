@@ -9,9 +9,9 @@ export default async function UserpageLayout({ children, params }) {
   const userData = await sql`SELECT * FROM profiles WHERE id = ${params.profileId}`;
 
   //   const userData = await getUserData.json();
-  console.log("userData", userData);
-  console.log("userId", userId);
-  console.log("clerk_user_id", userData.rows[0].clerk_user_id);
+  // console.log("userData", userData);
+  // console.log("userId", userId);
+  // console.log("clerk_user_id", userData.rows[0].clerk_user_id);
 
   if (!userData.rows[0]) {
     notFound();

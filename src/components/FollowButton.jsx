@@ -7,7 +7,7 @@ export default async function FollowButton({ params, userData, userId }) {
   const currentUserId = await sql`SELECT id FROM profiles WHERE clerk_user_id = ${userId}`;
 
   //GET LIST OF CURRENT USERS FOLLOWS
-  const usersFollows = await sql`SELECT * FROM follows WHERE follower_id = ${currentUserId.rows[0].id}`;
+  //   const usersFollows = await sql`SELECT * FROM follows WHERE follower_id = ${currentUserId.rows[0].id}`;
 
   let isFollowing = await sql`SELECT EXISTS (
         SELECT 1

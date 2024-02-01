@@ -17,7 +17,7 @@ const SeparatorDemo = ({ username, bio, params }) => (
         <Link href={`/user/${params.profileId}/posts`}>Posts</Link>
       </div>
       <Separator.Root className="SeparatorRoot" decorative orientation="vertical" style={{ margin: "0 15px" }} />
-      <div className="Text">Follows</div>
+      <div className="Text">Followed users</div>
       <Separator.Root className="SeparatorRoot" decorative orientation="vertical" style={{ margin: "0 15px" }} />
       <div className="Text">Followed by</div>
     </div>
