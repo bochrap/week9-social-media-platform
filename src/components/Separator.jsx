@@ -5,7 +5,7 @@ import * as Separator from "@radix-ui/react-separator";
 import "../app/globals.css";
 import Link from "next/link";
 
-const SeparatorDemo = ({ username, bio, params, postsCount }) => (
+const SeparatorDemo = ({ username, bio, params, postsCount, userFollows, userFollowers }) => (
   <div style={{ width: "100%", maxWidth: 300, margin: "0 15px" }}>
     <div className="Text" style={{ fontWeight: 500 }}>
       {username}&apos;s Profile Page
@@ -18,11 +18,11 @@ const SeparatorDemo = ({ username, bio, params, postsCount }) => (
       </div>
       <Separator.Root className="SeparatorRoot" decorative orientation="vertical" style={{ margin: "0 15px" }} />
       <div className="Text">
-        <Link href={`/user/${params.profileId}/following`}>Followed users</Link>
+        <Link href={`/user/${params.profileId}/following`}>Followed users{`(${userFollows})`}</Link>
       </div>
       <Separator.Root className="SeparatorRoot" decorative orientation="vertical" style={{ margin: "0 15px" }} />
       <div className="Text">
-        <Link href={`/user/${params.profileId}/followedby`}>Followed by</Link>
+        <Link href={`/user/${params.profileId}/followedby`}>Followed by{`(${userFollowers})`}</Link>
       </div>
     </div>
   </div>
