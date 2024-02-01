@@ -4,6 +4,10 @@
   padding: 0;
 }
 
+html {
+  min-height: 100vh;
+}
+
 body {
   min-height: 100vh;
 }
@@ -44,11 +48,12 @@ body {
 }
 
 #username-separator {
-  border-right: 2px solid rgb(0, 105, 234, 1);
+  flex-grow: 1;
+  /* border-right: 2px solid rgb(0, 105, 234, 1); */
 }
 
 #userpage-children {
-  justify-self: center;
+  flex-grow: 4;
 }
 
 /* USERPAGE STYLES END */

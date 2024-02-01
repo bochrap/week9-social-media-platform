@@ -15,3 +15,9 @@ CREATE TABLE posts (
 rgb(0, 105, 234, 1)
 npm install @radix-ui/react-separator
 npm install @radix-ui/colors
+
+SELECT profiles.username, profiles.id 
+FROM profiles 
+INNER JOIN posts ON profiles.id = posts.profile_id
+
+SELECT posts.id, posts.content, posts.profile_id, posts.date, profiles.username  FROM posts INNER JOIN profiles ON profiles.id = posts.profile_id
