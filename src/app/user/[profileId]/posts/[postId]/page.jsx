@@ -15,7 +15,7 @@ export default async function GetUserPosts({ params }) {
 
   return (
     <div>
-      <h3>User posts</h3>
+      <Link href={`/user/${params.profileId}/posts`}>{`<< Back to user's posts`}</Link>
       <div id="post-container">
         <p>
           <Link href={`/user/${post.rows[0].profile_id}/posts`} id="plink">
