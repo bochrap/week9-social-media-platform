@@ -21,6 +21,14 @@ export default async function FollowButton({ params, userData, userId }) {
   //     revalidatePath(`/user/${params.profileId}`);
   //   }
 
+  //SET INITIAL VALUE FOR BUTTONS TEXT
+  let text = "";
+  if (isFollowing.rows[0].value_exists === true) {
+    text = "UNFOLLOW";
+  } else {
+    text = "FOLLOW";
+  }
+
   async function handleFollow() {
     "use server";
     console.log(isFollowing.rows[0].value_exists);
@@ -36,7 +44,7 @@ export default async function FollowButton({ params, userData, userId }) {
 
   return (
     <form action={handleFollow}>
-      <button className="follow-btn-follow">FOLLOW</button>
+      <button className="follow-btn-follow">{text}</button>
     </form>
   );
 }
