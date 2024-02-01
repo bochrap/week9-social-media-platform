@@ -19,8 +19,7 @@ export default async function UserpageLayout({ children, params }) {
   return (
     <div id="userpage-content">
       <div id="username-separator">
-        {userId === userData.rows[0].clerk_user_id ? null : <FollowButton />}
-        {/* <FollowButton /> */}
+        {userId === userData.rows[0].clerk_user_id ? null : <FollowButton params={params} userData={userData} userId={userId} />}
         <SeparatorDemo username={userData.rows[0].username} bio={userData.rows[0].bio} params={params} />
       </div>
       <div id="userpage-children">{children}</div>

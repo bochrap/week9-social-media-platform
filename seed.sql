@@ -12,6 +12,11 @@ CREATE TABLE posts (
     date TIMESTAMP
 )
 
+CREATE TABLE follows(
+    follower_id INT NOT NULL,
+    followee_id INT NOT NULL
+)
+
 rgb(0, 105, 234, 1)
 npm install @radix-ui/react-separator
 npm install @radix-ui/colors
