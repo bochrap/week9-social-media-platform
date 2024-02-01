@@ -4,6 +4,10 @@
   padding: 0;
 }
 
+body {
+  min-height: 100vh;
+}
+
 #new-profile-form {
   display: flex;
   flex-direction: column;
@@ -29,8 +33,25 @@
   justify-content: center;
   max-height: 200px;
 }
-
 /* ENDOF HEADER */
+
+/* USERPAGE STYLES START */
+
+#userpage-content {
+  display: flex;
+  flex-grow: 1;
+  /* justify-content: space-between; */
+}
+
+#username-separator {
+  border-right: 2px solid rgb(0, 105, 234, 1);
+}
+
+#userpage-children {
+  justify-self: center;
+}
+
+/* USERPAGE STYLES END */
 
 /* POST CONTAINER */
 #post-container {
@@ -65,6 +86,7 @@
 
 /* @import "@radix-ui/colors/violet.css"; */
 
+/* SEPARATOR STYLES START */
 .SeparatorRoot {
   /* background-color: var(--violet-6); */
   background-color: rgb(0, 105, 234, 1);
@@ -83,3 +105,5 @@
   font-size: 15px;
   line-height: 20px;
 }
+
+/* SEPARATOR STYLES END */
