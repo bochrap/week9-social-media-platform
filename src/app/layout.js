@@ -22,13 +22,16 @@ export default async function RootLayout({ children }) {
     <ClerkProvider>
       <html lang="en">
         <body className={inter.className}>
-          <UserButton id="header-user-button" afterSignOutUrl="/" />
+          <div id="header-icons">
+            <UserButton id="header-user-button" afterSignOutUrl="/" />
+            <Link id="add-post-element" href={`/user/${profileRes.rows[0].id}/addpost`}>
+              Add post
+            </Link>
+          </div>
           <div id="header-main">
             <Link href="/">
               <Image id="main-logo" src={myImage} alt="Logo" />
             </Link>
-
-            {/* <h1>Filipstagram</h1> */}
           </div>
           {profileRes.rowCount !== 0 && children}
           {profileRes.rowCount === 0 && <CreateProfile />}

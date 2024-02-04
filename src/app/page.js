@@ -12,11 +12,11 @@ export default async function Home() {
       <p>
         Explore <Link href="/allposts">All posts</Link>
       </p>
-      <p>
+      {/* <p>
         Say something yourself <Link href={`/user/${currentUserId.rows[0].id}/addpost`}>xx</Link>
-      </p>
+      </p> */}
       <p>
-        Or visit your profile page <Link href={`/user/${currentUserId.rows[0].id}`}>xx</Link>
+        or visit your <Link href={`/user/${currentUserId.rows[0].id}`}>Profile Page</Link>
       </p>
     </div>
   );
