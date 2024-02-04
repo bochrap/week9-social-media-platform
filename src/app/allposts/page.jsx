@@ -6,7 +6,7 @@ export default async function AllPosts() {
     await sql`SELECT posts.id, posts.content, posts.profile_id, posts.date, profiles.username  FROM posts INNER JOIN profiles ON profiles.id = posts.profile_id ORDER BY date DESC`;
 
   return (
-    <div>
+    <div id="allposts-content">
       <h3>All posts</h3>
       {getAllPosts.rows.map((post) => (
         <Link id="post-link" key={post.date} href={`/user/${post.profile_id}/posts/${post.id}`}>

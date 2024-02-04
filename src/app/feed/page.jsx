@@ -18,7 +18,8 @@ export default async function Feed() {
     posts.profile_id,
     profiles.username,
     posts.date,
-    follows.followee_id
+    follows.followee_id,
+    posts.id
 FROM 
     posts
 JOIN 
@@ -31,7 +32,7 @@ ORDER BY
     posts.date DESC;`;
 
   return (
-    <div>
+    <div id="feed-content">
       <h3>All posts from followed users</h3>
       {getFeedPosts.rows.map((post) => (
         <Link id="post-link" key={post.date} href={`/user/${post.profile_id}/posts/${post.id}`}>
