@@ -12,15 +12,6 @@ export default async function UserpageLayout({ children, params }) {
 
   const userFollowers = await sql`SELECT * FROM follows WHERE followee_id = ${params.profileId}`;
 
-  console.log(userPosts.rows.length);
-  console.log(userFollows.rows.length);
-  console.log(userFollowers.rows.length);
-
-  //   const userData = await getUserData.json();
-  // console.log("userData", userData);
-  // console.log("userId", userId);
-  // console.log("clerk_user_id", userData.rows[0].clerk_user_id);
-
   if (!userData.rows[0]) {
     notFound();
   }

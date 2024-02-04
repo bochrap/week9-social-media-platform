@@ -3,10 +3,7 @@ import Link from "next/link";
 // import { auth } from "@clerk/nextjs";
 
 export default async function Followedby({ params }) {
-  //   console.log(currentUserId.rows[0].id);
   const userData = await sql`SELECT * FROM profiles WHERE id = ${params.profileId}`;
-
-  console.log(userData.rows[0].username);
 
   //GET LIST OF CURRENT USERS FOLLOWS
   //   const usersFollows = await sql`SELECT * FROM follows WHERE follower_id = ${params.profileId}`;
@@ -14,7 +11,6 @@ export default async function Followedby({ params }) {
 FROM follows
 JOIN profiles ON follows.follower_id = profiles.id
 WHERE follows.followee_id = ${params.profileId};`;
-  console.log(usersFollowers);
 
   return (
     <div>

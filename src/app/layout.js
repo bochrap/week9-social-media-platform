@@ -16,7 +16,6 @@ export const metadata = {
 
 export default async function RootLayout({ children }) {
   const { userId } = auth();
-  console.log(userId);
   const profileRes = await sql`SELECT * FROM profiles WHERE clerk_user_id = ${userId}`;
   return (
     <ClerkProvider>

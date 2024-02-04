@@ -11,7 +11,6 @@ export default async function AllPosts() {
       {getAllPosts.rows.map((post) => (
         <Link id="post-link" key={post.date} href={`/user/${post.profile_id}/posts/${post.id}`}>
           <div key={post.date} id="post-container">
-            {console.log(post.date)}
             <p>
               {post.username} posted on {new Date(post.date).toLocaleString()}
             </p>
@@ -21,25 +20,4 @@ export default async function AllPosts() {
       ))}
     </div>
   );
-  //   return (
-  //     <div>
-  //       <h3>All posts</h3>
-  //       {getAllPosts.rows.map((post) => (
-  //         // <Link id="post-link" key={post.date} href={`/user/${post.profile_id}/posts/${post.id}`}>
-  //         <div key={post.date} id="post-container">
-  //           {console.log(post.date)}
-  //           <p id="post-container1">
-  //             <Link href={`/user/${post.profile_id}/posts`} id="plink">
-  //               {post.username}
-  //             </Link>{" "}
-  //             posted on {new Date(post.date).toLocaleString()}
-  //           </p>
-  //           <Link href={`/user/${post.profile_id}/posts/${post.id}`} id="plink">
-  //             <p d="post-container2">{post.content}</p>
-  //           </Link>
-  //         </div>
-  //         // </Link>
-  //       ))}
-  //     </div>
-  //   );
 }

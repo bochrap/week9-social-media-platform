@@ -6,9 +6,6 @@ export default async function GetUserPosts({ params }) {
   const post =
     await sql`SELECT posts.id, posts.content, posts.profile_id, posts.date, profiles.username  FROM posts INNER JOIN profiles ON profiles.id = posts.profile_id WHERE posts.id = ${params.postId}`;
 
-  console.log(params);
-  console.log(post.rows);
-
   if (!post.rows[0]) {
     notFound();
   }
