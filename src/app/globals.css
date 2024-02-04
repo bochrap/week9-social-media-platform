@@ -39,6 +39,13 @@ body {
 }
 /* ENDOF HEADER */
 
+#home-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 /* USERPAGE STYLES START */
 
 #userpage-content {
