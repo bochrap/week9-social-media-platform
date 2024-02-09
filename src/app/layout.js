@@ -32,8 +32,8 @@ export default async function RootLayout({ children }) {
               <Image id="main-logo" src={myImage} alt="Logo" />
             </Link>
           </div>
-          {profileRes.rowCount !== 0 && children}
-          {profileRes.rowCount === 0 && <CreateProfile />}
+          {(await profileRes.rowCount) !== 0 && children}
+          {(await profileRes.rowCount) === 0 && <CreateProfile />}
           {/* {children} */}
         </body>
       </html>
