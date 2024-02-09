@@ -40,6 +40,8 @@ export default async function FollowButton({ params, userData, userId }) {
       console.log("FOLLOWED");
     }
     revalidatePath(`/user/${params.profileId}`);
+    revalidatePath(`/user/[id]/followedby`);
+    revalidatePath(`/user/[id]/following`);
   }
 
   return (
