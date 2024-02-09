@@ -23,17 +23,22 @@ export default async function RootLayout({ children }) {
         <body className={inter.className}>
           <div id="header-icons">
             <UserButton id="header-user-button" afterSignOutUrl="/" />
-            <Link id="add-post-element" href={`/user/${profileRes.rows[0].id}/addpost`}>
+            {profileRes.rowCount !== 0 && (
+              <Link id="add-post-element" href={`/user/${profileRes.rows[0].id}/addpost`}>
+                Add post
+              </Link>
+            )}
+            {/* <Link id="add-post-element" href={`/user/${profileRes.rows[0].id}/addpost`}>
               Add post
-            </Link>
+            </Link> */}
           </div>
           <div id="header-main">
             <Link href="/">
               <Image id="main-logo" src={myImage} alt="Logo" />
             </Link>
           </div>
-          {(await profileRes.rowCount) !== 0 && children}
-          {(await profileRes.rowCount) === 0 && <CreateProfile />}
+          {profileRes.rowCount !== 0 && children}
+          {profileRes.rowCount === 0 && <CreateProfile />}
           {/* {children} */}
         </body>
       </html>
